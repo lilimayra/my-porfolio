@@ -1,0 +1,63 @@
+/*Fuente Global*/
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+body {
+  font-family: "Comfortaa", sans-serif;
+  color: #4B4B4B ; /* Color del texto por defecto */
+  background: -webkit-linear-gradient(to right, #e0e7da, #f3f4f6);
+  background: linear-gradient(to right, #b0dab9, #dad299);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #3A6B3A;
+}
+
+p {
+  color: #4B4B4B ;
+}
+
+button {
+  background-color: #198754;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #155724 ;
+}
+
+/* Media queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  button {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.75rem;
+  }
+}
