@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion"; 
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Navbar from "./navbar/Navbar";
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 1000); 
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
