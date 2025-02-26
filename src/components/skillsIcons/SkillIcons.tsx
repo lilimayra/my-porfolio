@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import themeManager, { ThemeName } from "@/themes/themeManager";
 
 const SkillIcons = () => {
   const containerVariants = {

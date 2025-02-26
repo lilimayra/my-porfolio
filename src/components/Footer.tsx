@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from "react";
-import themeManager, { ThemeName } from "@/themes/themeManager";
-
 const Footer = () => {
   return (
     <footer className="py-4">

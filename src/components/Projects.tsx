@@ -1,6 +1,4 @@
 import ProjectGrid from "@/components/projectgrid/ProjectGrid";
-import React, { useState, useEffect } from "react";
-import themeManager, { ThemeName } from "@/themes/themeManager";
 
 const Projects = () => {
   return (
