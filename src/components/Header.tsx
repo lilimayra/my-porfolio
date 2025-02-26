@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Navbar from "./navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
@@ -27,7 +27,7 @@ const Header = () => {
           </h1>
           <p className="text-white text-sm md:text-lg lg:text-xl mb-2 text-shadow">
             Soy Mayra, mi camino está marcado por el aprendizaje y la búsqueda
-            de retos que me impulsan a crecer
+            de retos que me impulsen a crecer
           </p>
         </motion.div>
       </section>

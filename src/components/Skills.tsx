@@ -1,4 +1,4 @@
-import SkillIcons from "./skillsIcons/SkillIcons";
+import SkillIcons from "@/components/skillsIcons/SkillIcons";
 
 const Skills = () => {
   return (

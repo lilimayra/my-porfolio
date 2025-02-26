@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import themeManager, { ThemeName } from "@/themes/themeManager";
 
 const SkillIcons = () => {
   const containerVariants = {
@@ -27,31 +29,52 @@ const SkillIcons = () => {
     >
       <div className="flex flex-wrap justify-center space-x-4 md:space-x-12 lg:space-x-16">
         {/* Cada ícono tiene su animación individual */}
-        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center"
+          variants={itemVariants}
+        >
           <i className="bx bxl-css3 text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">CSS3</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center"
+          variants={itemVariants}
+        >
           <i className="bx bxl-tailwind-css text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">Tailwind</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center"
+          variants={itemVariants}
+        >
           <i className="bx bxl-bootstrap text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">Bootstrap</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center"
+          variants={itemVariants}
+        >
           <i className="bx bxl-javascript text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">JavaScript</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center mt-4 md:mt-0" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center mt-4 md:mt-0"
+          variants={itemVariants}
+        >
           <i className="bx bxl-react text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">React</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center mt-4 md:mt-0" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center mt-4 md:mt-0"
+          variants={itemVariants}
+        >
           <i className="bx bxl-vuejs text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">Vue.js</p>
         </motion.div>
-        <motion.div className="flex flex-col items-center mt-4 md:mt-0" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center mt-4 md:mt-0"
+          variants={itemVariants}
+        >
           <i className="bx bxl-github text-5xl md:text-6xl text-gray-600"></i>
           <p className="mt-2 text-sm text-gray-600">GitHub</p>
         </motion.div>

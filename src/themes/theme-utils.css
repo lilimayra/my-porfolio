@@ -1,0 +1,71 @@
+/*
+  Utilidades CSS para mejorar el contraste en el tema oscuro
+  Estas clases se pueden usar junto con las variables de tema
+*/
+
+/* Tema oscuro: ajustes de contraste para clases comunes de Tailwind */
+.theme-dark .text-gray-600,
+.theme-dark .text-gray-700,
+.theme-dark .text-gray-800 {
+  color: #ffffff !important;
+}
+
+/* Etiquetas de habilidades */
+.theme-dark .bg-gray-100 {
+  background-color: #3a3a3a !important;
+}
+
+.theme-dark .bg-gray-100 .text-sm {
+  color: #ffffff !important;
+}
+
+.theme-dark .text-sm.font-medium.text-gray-700 {
+  color: #ffffff !important;
+}
+
+/* Botones */
+.theme-dark .bg-gray-800 {
+  background-color: #ffd700 !important;
+  color: #121212 !important;
+}
+
+.theme-dark .hover\:bg-gray-700:hover {
+  background-color: #e6c200 !important;
+}
+
+/* Asegurar que los iconos sean visibles */
+.theme-dark .bx {
+  color: #9fe388 !important;
+}
+
+/* Iconos en botones */
+.theme-dark .bg-gray-800 .bx,
+.theme-dark .hover\:bg-gray-700:hover .bx {
+  color: #121212 !important;
+}
+
+/* Enlaces en el texto */
+.theme-dark a.underline,
+.theme-dark a.hover\:text-gray-800 {
+  color: #d2ffb9 !important;
+}
+
+.theme-dark a.underline:hover,
+.theme-dark a.hover\:text-gray-800:hover {
+  color: #ffd700 !important;
+}
+
+/* Bordes */
+.theme-dark .border-t.boder-custom {
+  border-color: #9fe388 !important;
+}
+
+/* Imágenes */
+.theme-dark .border-white {
+  border-color: #3a3a3a !important;
+}
+
+/* Contenedores */
+.theme-dark .background-custom {
+  background-color: #2d2d2df5 !important;
+}
