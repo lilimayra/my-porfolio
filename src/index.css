@@ -24,37 +24,36 @@ h3,
 h4,
 h5,
 h6 {
-  color: #3e5835ca; 
+  color: #3e5835ca;
 }
 
 /* Estilos de Texto */
 p {
-  color: #4b4b4b; 
+  color: #4b4b4b;
 }
 
 /* Estilos de Botones */
 .button {
-  background-color: #daa121; 
-  color: white; 
-  padding: 0.5rem 1rem; 
-  border: none; 
-  border-radius: 0.25rem; 
-  cursor: pointer; 
+  background-color: #daa121;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
 }
 
 /* Estilos de la Barra de Navegación */
 .navbar {
-  background-color: rgba(62, 88, 53, 0.1); 
-  backdrop-filter: blur(2px); 
+  background-color: rgba(62, 88, 53, 0.1);
+  backdrop-filter: blur(2px);
 }
-
 
 /* Estilos del Fondo */
 .fondos {
-  width: 100vw; 
-  height: 100vh; 
+  width: 100vw;
+  height: 100vh;
   background: url("https://d2lcsjo4hzzyvz.cloudfront.net/blog/wp-content/uploads/2019/10/29154758/escritorio-decorado-con-plantas.jpg")
-    no-repeat center; 
+    no-repeat center;
   background-size: cover; /* Ajuste de imagen de fondo */
   position: relative; /* Posicionamiento relativo */
   display: flex; /* Asegura el centrado en ambas versiones */
@@ -68,19 +67,18 @@ p {
 }
 
 .background-custom {
-  background-color: #3e58351A; 
+  background-color: #3e58351a;
 }
 
 .border-left {
-  background-color: #DAA121; 
+  background-color: #daa121;
 }
-
 
 /* Estilo para el fondo translúcido */
 .translucent-bg {
-  background-color: rgba(62, 88, 53, 0.5); 
-  padding: 1rem; 
-  border-radius: 0.5rem; 
+  background-color: rgba(62, 88, 53, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -88,7 +86,97 @@ p {
 @media (max-width: 768px) {
   .fondos {
     height: auto;
-    background-size: contain; 
-    background-position: top center; 
+    background-size: contain;
+    background-position: top center;
   }
+}
+
+/* Mejoras para modo oscuro */
+.theme-dark {
+  color-scheme: dark; /* Mejora elementos nativos en modo oscuro */
+}
+
+/* Mejora específica para textos en modo oscuro */
+html.theme-dark body {
+  color: #e8e8e8;
+}
+
+html.theme-dark p,
+html.theme-dark span,
+html.theme-dark div,
+html.theme-dark small {
+  color: #e8e8e8;
+}
+
+/* Encabezados con color verde luminoso */
+html.theme-dark h1,
+html.theme-dark h2,
+html.theme-dark h3,
+html.theme-dark h4,
+html.theme-dark h5,
+html.theme-dark h6 {
+  color: #9fe388;
+  text-shadow: 0 0 4px rgba(159, 227, 136, 0.4);
+}
+
+/* Seleccionar todo el texto dentro de un componente en modo oscuro */
+html.theme-dark * {
+  color-scheme: dark;
+}
+
+/*
+  IMPORTANTE: OVERRIDE FINAL PARA MODO OSCURO
+  Estas reglas tienen máxima prioridad y se aplicarán siempre en último lugar
+*/
+@layer utilities {
+  body.theme-dark h1,
+  body.theme-dark h2,
+  body.theme-dark h3,
+  body.theme-dark h4,
+  body.theme-dark h5,
+  body.theme-dark h6 {
+    text-shadow: 0 0 4px rgba(159, 227, 136, 0.4);
+  }
+
+  body.theme-dark a {
+    color: #d2ffb9 !important;
+    font-weight: 500;
+  }
+
+  body.theme-dark p,
+  body.theme-dark span:not(button span),
+  body.theme-dark div:not(.bg-gray-100):not(.bg-gray-800) {
+    color: #ffffff !important;
+  }
+
+  body.theme-dark .bg-gray-100 {
+    background-color: #3a3a3a !important;
+    border: 1px solid #9fe388 !important;
+  }
+
+  body.theme-dark .bg-gray-800 *,
+  body.theme-dark button.bg-gray-800 * {
+    color: #121212 !important;
+  }
+
+  body.theme-dark .bx {
+    color: #acff8e !important;
+  }
+
+  /* Estilo de depuración - solo para comprobar si las reglas se están aplicando */
+  body.theme-dark::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+    z-index: 9999;
+  }
+}
+
+/* Forzar aplicación de estilos en modo oscuro */
+html[class*="theme-dark"] {
+  background-color: #232323;
 }

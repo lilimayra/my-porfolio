@@ -77,26 +77,26 @@ export const THEME_LIGHT = {
 // Paleta de colores oscuros (Tema Dark - Oscuro con acentos suaves)
 export const THEME_DARK = {
   // Colores base
-  TEXT_COLOR: "#FFFFFF",
-  HEADING_COLOR: "#B5FF99",
+  TEXT_COLOR: "#E8E8E8",
+  HEADING_COLOR: "#9FE388",
 
   // Fondos
   BACKGROUND_GRADIENT: "linear-gradient(135deg, #323438, #232323)",
   CONTAINER_BG: "#2D2D2DF5",
 
   // Colores sólidos
-  CUSTOM_GRAY: "#E0E0E0",
-  CUSTOM_DARK_GRAY: "#B0B0B0",
+  CUSTOM_GRAY: "#E8E8E8",
+  CUSTOM_DARK_GRAY: "#CCCCCC",
   GREEN_ACCENT: "#9FE388",
   DARK_BG: "#1A1A1A",
   DARK_SURFACE: "#2D2D2D",
   DARK_SURFACE_2: "#3A3A3A",
   ACCENT_COLOR: "#9FE388",
   SECONDARY_COLOR: "#3A3A3A",
-  GOLD: "#FFD700",
+  GOLD: "#FFE147",
 
   // Colores con transparencia
-  GREEN_TRANSPARENT: "rgba(159, 227, 136, 0.3)",
+  GREEN_TRANSPARENT: "rgba(159, 227, 136, 0.4)",
   DARK_TRANSPARENT: "rgba(45, 45, 45, 0.9)",
   NAVBAR_BACKGROUND: "rgba(45, 45, 45, 0.9)",
   TRANSLUCENT_BACKGROUND: "rgba(45, 45, 45, 0.8)",
@@ -105,11 +105,11 @@ export const THEME_DARK = {
   // Elementos específicos
   BORDER_LEFT: "#9FE388",
   BORDER_COLOR: "#9FE388",
-  BUTTON_BACKGROUND: "#FFD700",
+  BUTTON_BACKGROUND: "#FFE147",
   BUTTON_TEXT: "#121212",
-  LOGO_COLOR: "#B5FF99",
-  NAV_LINK_COLOR: "#D2FFB9",
-  NAV_LINK_HOVER_COLOR: "#FFD700",
+  LOGO_COLOR: "#9FE388",
+  NAV_LINK_COLOR: "#E8E8E8",
+  NAV_LINK_HOVER_COLOR: "#FFE147",
 };
 
 // Mantener compatibilidad con código existente

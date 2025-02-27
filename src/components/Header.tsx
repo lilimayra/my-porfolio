@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="mb-5">
       <Navbar />
-      <section className="fondos flex flex-col items-center justify-start md:justify-center text-center p-10">
+      <section className="fondos flex flex-col items-center justify-start md:justify-center text-center p-10 max-h-[1400px]">
         <motion.div
           className="container w-full max-w-lg lg:max-w-3xl mx-auto translucent-bg mt-10"
           initial={{ opacity: 0, x: 100 }} // Comienza oculto y desplazado a la derecha

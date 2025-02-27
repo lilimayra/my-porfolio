@@ -3,29 +3,63 @@
   Estas clases se pueden usar junto con las variables de tema
 */
 
-/* Tema oscuro: ajustes de contraste para clases comunes de Tailwind */
+/* RESETEO GLOBAL DE TEXTOS PARA EL TEMA OSCURO */
+.theme-dark * {
+  color: #ffffff !important;
+}
+
+/* Clases específicas de texto para Tailwind */
+.theme-dark .text-gray-100,
+.theme-dark .text-gray-200,
+.theme-dark .text-gray-300,
+.theme-dark .text-gray-400,
+.theme-dark .text-gray-500,
 .theme-dark .text-gray-600,
 .theme-dark .text-gray-700,
-.theme-dark .text-gray-800 {
+.theme-dark .text-gray-800,
+.theme-dark .text-gray-900,
+.theme-dark .text-custom-gray,
+.theme-dark .text-custom-dark-gray {
+  color: #ffffff !important; /* Blanco puro para todos los textos grises */
+}
+
+/* Párrafos y textos específicos */
+.theme-dark p,
+.theme-dark span,
+.theme-dark small,
+.theme-dark label,
+.theme-dark div:not(.bg-gray-100):not(.bg-gray-800) {
   color: #ffffff !important;
 }
 
-/* Etiquetas de habilidades */
+/* Textos específicos por tamaño */
+.theme-dark .text-sm,
+.theme-dark .text-base,
+.theme-dark .text-lg,
+.theme-dark .text-xl {
+  color: #ffffff !important;
+}
+
+/* Etiquetas de habilidades - fondo oscuro con texto brillante */
 .theme-dark .bg-gray-100 {
   background-color: #3a3a3a !important;
+  border: 1px solid #9fe388 !important;
 }
 
-.theme-dark .bg-gray-100 .text-sm {
+.theme-dark .bg-gray-100 .text-sm,
+.theme-dark .text-sm.font-medium.text-gray-700,
+.theme-dark .bg-gray-100 * {
   color: #ffffff !important;
-}
-
-.theme-dark .text-sm.font-medium.text-gray-700 {
-  color: #ffffff !important;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Botones */
 .theme-dark .bg-gray-800 {
   background-color: #ffd700 !important;
+}
+
+.theme-dark .bg-gray-800 *,
+.theme-dark .hover\:bg-gray-700:hover * {
   color: #121212 !important;
 }
 
@@ -33,26 +67,33 @@
   background-color: #e6c200 !important;
 }
 
-/* Asegurar que los iconos sean visibles */
+/* Iconos - verdes brillantes para mejor visibilidad */
 .theme-dark .bx {
   color: #9fe388 !important;
+  text-shadow: 0 0 2px rgba(159, 227, 136, 0.3) !important;
 }
 
-/* Iconos en botones */
+/* Iconos en botones - mantener oscuros para contraste */
 .theme-dark .bg-gray-800 .bx,
 .theme-dark .hover\:bg-gray-700:hover .bx {
   color: #121212 !important;
+  text-shadow: none !important;
 }
 
-/* Enlaces en el texto */
+/* Enlaces en el texto - verde brillante */
+.theme-dark a,
 .theme-dark a.underline,
 .theme-dark a.hover\:text-gray-800 {
   color: #d2ffb9 !important;
+  text-shadow: 0 0 2px rgba(210, 255, 185, 0.4) !important;
+  font-weight: 500 !important;
 }
 
+.theme-dark a:hover,
 .theme-dark a.underline:hover,
 .theme-dark a.hover\:text-gray-800:hover {
   color: #ffd700 !important;
+  text-shadow: 0 0 3px rgba(255, 215, 0, 0.4) !important;
 }
 
 /* Bordes */
@@ -68,4 +109,17 @@
 /* Contenedores */
 .theme-dark .background-custom {
   background-color: #2d2d2df5 !important;
+  border: 1px solid #9fe388 !important;
+}
+
+/* Encabezados - verde brillante para destacar */
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: #b5ff99 !important;
+  text-shadow: 0 0 3px rgba(181, 255, 153, 0.3) !important;
+  font-weight: bold !important;
 }

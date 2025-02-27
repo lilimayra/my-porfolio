@@ -1,0 +1,117 @@
+/**
+ * ESTILOS FORZADOS PARA TEMA OSCURO
+ * Este archivo contiene reglas con máxima especificidad y prioridad
+ * para garantizar que los textos sean luminosos en el modo oscuro.
+ */
+
+/* RESETEO GLOBAL DE TEXTO - Ahora con un blanco menos intenso */
+body.theme-dark
+  *:not(.bg-gray-800 *):not(button.bg-gray-800 *):not(
+    .theme-dark .bg-gray-800 i
+  ):not(i.bx[class*="download"]):not(h1):not(h2):not(h3):not(h4):not(h5):not(
+    h6
+  ) {
+  color: #e8e8e8 !important;
+}
+
+/* Encabezados - Verde luminoso similar al original */
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6 {
+  color: #9fe388 !important; /* Verde más similar al original pero luminoso */
+  text-shadow: 0 0 4px rgba(159, 227, 136, 0.4) !important;
+  font-weight: bold !important;
+}
+
+/* Enlaces */
+body.theme-dark a:not(.bg-gray-800) {
+  color: #d2ffb9 !important;
+  text-shadow: 0 0 3px rgba(210, 255, 185, 0.4) !important;
+  font-weight: 500 !important;
+}
+
+body.theme-dark a:hover:not(.bg-gray-800) {
+  color: #ffe147 !important;
+}
+
+/* Párrafos y textos generales - Blanco menos intenso */
+body.theme-dark p,
+body.theme-dark span:not(button span):not(.bg-gray-800 span),
+body.theme-dark div:not(.bg-gray-100):not(.bg-gray-800) {
+  color: #e8e8e8 !important;
+}
+
+/* Etiquetas y fondos */
+body.theme-dark .bg-gray-100 {
+  background-color: #3a3a3a !important;
+  border: 1px solid #9fe388 !important;
+}
+
+body.theme-dark .bg-gray-100 * {
+  color: #e8e8e8 !important;
+}
+
+/* Botones */
+body.theme-dark .bg-gray-800,
+body.theme-dark button.bg-gray-800 {
+  background-color: #ffe147 !important;
+}
+
+body.theme-dark .bg-gray-800 *,
+body.theme-dark button.bg-gray-800 * {
+  color: #121212 !important;
+}
+
+/* Iconos */
+body.theme-dark .bx:not(.bx-download):not(.theme-dark .bg-gray-800 .bx) {
+  color: #9fe388 !important; /* Verde más fiel al original */
+  text-shadow: 0 0 2px rgba(159, 227, 136, 0.4) !important;
+}
+
+/* Contenedores */
+body.theme-dark .background-custom {
+  background-color: #2d2d2df5 !important;
+  border: 1px solid #9fe388 !important;
+}
+
+/* Textos específicos por clase - Ahora menos intensos */
+body.theme-dark .text-gray-100,
+body.theme-dark .text-gray-200,
+body.theme-dark .text-gray-300,
+body.theme-dark .text-gray-400,
+body.theme-dark .text-gray-500,
+body.theme-dark .text-gray-600,
+body.theme-dark .text-gray-700,
+body.theme-dark .text-gray-800,
+body.theme-dark .text-gray-900,
+body.theme-dark .text-custom-gray,
+body.theme-dark .text-custom-dark-gray {
+  color: #e8e8e8 !important;
+}
+
+/* Textos menos contrastantes para mejor lectura */
+body.theme-dark small,
+body.theme-dark .text-sm {
+  color: #cccccc !important; /* Gris claro para textos pequeños */
+}
+
+/* Indicador visual para confirmar que estos estilos están siendo aplicados */
+body.theme-dark::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #9fe388; /* Cambiado a verde para mostrar que se aplicaron los nuevos cambios */
+  z-index: 9999;
+}
+
+/* Asegurar que el background también sea oscuro */
+body.theme-dark,
+html.theme-dark {
+  background: linear-gradient(135deg, #323438, #232323) !important;
+}

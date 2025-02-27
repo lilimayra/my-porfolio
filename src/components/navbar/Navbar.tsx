@@ -27,7 +27,14 @@ export default function Navbar() {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY;
+      const navbarHeight = document.querySelector("nav")?.clientHeight ?? 64;
+
+      window.scrollTo({
+        top: offsetPosition - navbarHeight,
+        behavior: "smooth",
+      });
     }
   };
 

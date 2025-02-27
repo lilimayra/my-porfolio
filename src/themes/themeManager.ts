@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as colors from "@/themes/colors";
 import { applyThemeAsCssVariables } from "@/themes/themeUtils";
 
 // Tipo más flexible para los temas
-export type Theme = Record<string, string | number | any>;
+export type Theme = Record<string, string | number>;
 
 // Nombres de temas disponibles
 export enum ThemeName {
@@ -127,7 +128,7 @@ class ThemeManager {
     // Solo aplicar tema automáticamente si no hay preferencia guardada
     if (!localStorage.getItem("preferred-theme")) {
       // Siempre usar el tema GREEN (planta) por defecto
-      this.setTheme(ThemeName.GREEN);
+      this.setTheme(ThemeName.LIGHT);
 
       // Nota: Se ha desactivado la detección automática de modo oscuro/claro
       // para priorizar el tema verde como predeterminado
@@ -176,6 +177,7 @@ class ThemeManager {
    */
   private applyTheme(): void {
     const theme = this.getTheme();
+    const themeName = this.currentTheme;
 
     // Aplicar el fondo al body
     if (theme.BACKGROUND_GRADIENT) {
@@ -184,6 +186,41 @@ class ThemeManager {
 
     // Aplicar variables CSS
     applyThemeAsCssVariables(theme);
+
+    // Aplicar clase de tema directamente aquí también para mayor confiabilidad
+    const themeClass = `theme-${themeName.toLowerCase()}`;
+
+    // Aplicar al HTML
+    document.documentElement.className = "";
+    document.documentElement.classList.add(themeClass);
+
+    // Aplicar al BODY
+    document.body.className = document.body.className
+      .replace(/theme-\w+/g, "")
+      .trim();
+    document.body.classList.add(themeClass);
+
+    // Para el tema oscuro, forzamos un repintado completo
+    if (themeName === ThemeName.DARK) {
+      // Forzar aplicación forzosa de estilos
+      document.body.setAttribute("data-force-dark", "true");
+
+      // Forzar un repintado después de un breve retraso
+      setTimeout(() => {
+        // "Flash" temporal para forzar repintado
+        const currentDisplay = document.body.style.display;
+        document.body.style.display = "none";
+        const height = document.body.offsetHeight; // Forzar reflow
+        // Para evitar warning de variable no utilizada
+        if (height) {
+          console.debug("Forcing dark theme repaint, height:", height);
+        }
+        document.body.style.display = currentDisplay;
+      }, 10);
+    } else {
+      // Quitar atributo para otros temas
+      document.body.removeAttribute("data-force-dark");
+    }
   }
 }
 
