@@ -11,10 +11,32 @@
 
 /* Estilos Globales */
 
+:root {
+  /* Paleta de colores para el tema por defecto */
+  --text-color: #4b4b4b;
+  --background-gradient: linear-gradient(to right, #b0dab9, #dad299);
+  --container-bg: #ffffffd9;
+  --accent-color: #3e5835;
+  --secondary-color: #dad299;
+  --border-left: #daa121;
+  --border-color: #daa121;
+  --button-background: #daa121;
+  --button-text: white;
+}
+
+/* Configuraciones globales */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
   font-family: "Comfortaa", sans-serif;
-  color: #4b4b4b; /* Color del texto por defecto */
-  background: linear-gradient(to right, #b0dab9, #dad299);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background: var(--background-gradient);
+  min-height: 100vh;
 }
 
 /* Estilos de Encabezados */
@@ -93,7 +115,17 @@ p {
 
 /* Mejoras para modo oscuro */
 .theme-dark {
-  color-scheme: dark; /* Mejora elementos nativos en modo oscuro */
+  color-scheme: dark;
+  --text-color: #e8e8e8;
+  --heading-color: #9fe388;
+  --background-gradient: linear-gradient(135deg, #323438, #232323);
+  --container-bg: #2d2d2df5;
+  --accent-color: #9fe388;
+  --secondary-color: #3a3a3a;
+  --border-left: #9fe388;
+  --border-color: #9fe388;
+  --button-background: #ffe147;
+  --button-text: #121212;
 }
 
 /* Mejora específica para textos en modo oscuro */
@@ -179,4 +211,256 @@ html.theme-dark * {
 /* Forzar aplicación de estilos en modo oscuro */
 html[class*="theme-dark"] {
   background-color: #232323;
+}
+
+/* --------------------- Foco en elementos ------------------ */
+/* Eliminar el borde azul predeterminado en los elementos con foco y usar verde */
+*:focus {
+  outline-color: #3e5835 !important;
+}
+
+/* Estilos específicos para componentes de HeadlessUI */
+[data-headlessui-state="open"],
+[data-headlessui-state="selected"] {
+  outline-color: #3e5835 !important;
+  box-shadow: 0 0 0 2px #3e5835 !important;
+}
+
+/* -------------------- Estructura básica -------------------- */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.navbar {
+  background: var(--container-bg);
+  backdrop-filter: blur(5px);
+}
+
+/* -------------------- Elementos específicos -------------------- */
+.boder-custom {
+  border-color: var(--border-left);
+}
+
+.button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+}
+
+.sombra-c {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Clases específicas para animaciones */
+.efecto-hover:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* -------------------- Tema claro -------------------- */
+.theme-light {
+  --text-color: #4b4b4b;
+  --background-gradient: linear-gradient(135deg, #fefefe, #f5f2e9);
+  --container-bg: #ffffffd9;
+  --accent-color: #3e5835;
+  --secondary-color: #f5f2e9;
+  --border-left: #3e5835;
+  --border-color: #3e5835;
+  --button-background: #daa121;
+  --button-text: white;
+}
+
+/* -------------------- Modo de contraste -------------------- */
+@media (prefers-contrast: more) {
+  :root {
+    --text-color: black;
+    --button-background: #000000;
+    --button-text: white;
+  }
+
+  body {
+    background: white;
+  }
+
+  .boder-custom {
+    border-color: black;
+  }
+}
+
+/* -------------------- Tema oscuro -------------------- */
+.theme-dark {
+  color-scheme: dark;
+  --text-color: #e8e8e8;
+  --heading-color: #9fe388;
+  --background-gradient: linear-gradient(135deg, #323438, #232323);
+  --container-bg: #2d2d2df5;
+  --accent-color: #9fe388;
+  --secondary-color: #3a3a3a;
+  --border-left: #9fe388;
+  --border-color: #9fe388;
+  --button-background: #ffe147;
+  --button-text: #121212;
+}
+
+/* Ajustes específicos para modo oscuro */
+.theme-dark body {
+  color: #e8e8e8;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 {
+  color: #9fe388;
+  text-shadow: 0 0 10px rgba(159, 227, 136, 0.3);
+}
+
+/* Sobrescribir el color de foco en tema oscuro */
+.theme-dark *:focus {
+  outline-color: #9fe388 !important;
+}
+
+.theme-dark [data-headlessui-state="open"],
+.theme-dark [data-headlessui-state="selected"] {
+  outline-color: #9fe388 !important;
+  box-shadow: 0 0 0 2px #9fe388 !important;
+}
+
+/* Ajustes MUY específicos para eliminar bordes en modo oscuro */
+html.theme-dark [id^="headlessui-tabs-panel-"],
+html.theme-dark [role="tabpanel"],
+.theme-dark [id^="headlessui-tabs-panel-"],
+.theme-dark [role="tabpanel"],
+html.theme-dark .tab-panels-container > div,
+.theme-dark .tab-panels-container > div,
+html.theme-dark [id^="headlessui"] {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Temaclaro duplicado con mejoras */
+.theme-light {
+  --text-color: #4b4b4b;
+  --background-gradient: linear-gradient(135deg, #fefefe, #f5f2e9);
+  --container-bg: #ffffffd9;
+  --accent-color: #3e5835;
+  --secondary-color: #f5f2e9;
+  --border-left: #3e5835;
+  --border-color: #3e5835;
+  --button-background: #daa121;
+  --button-text: white;
+}
+
+/* Estilo específico para tabs */
+[role="tab"]:focus {
+  outline: none !important;
+}
+
+[role="tab"][data-headlessui-state="selected"] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Eliminar bordes en los paneles de tabs */
+[id^="headlessui-tabs-panel-"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[role="tabpanel"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Estilos específicos para eliminar bordes en general */
+.no-border {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+/* Estilos específicamente para el modo oscuro */
+.dark-no-border,
+html.theme-dark .dark-no-border,
+.theme-dark .dark-no-border {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Selector para llegar a cualquier elemento en un panel de pestañas en modo oscuro */
+.theme-dark .tab-panels-container *,
+html.theme-dark .tab-panels-container * {
+  border-color: transparent !important;
+  border-width: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Eliminar bordes en los paneles de tabs */
+[id^="headlessui-tabs-panel-"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[role="tabpanel"] {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }

@@ -11,6 +11,10 @@ module.exports = {
         gold: "#daa121",
         "green-transparent-2": "#3e5835ca",
         "green-transparent-3": "#3e5835b0",
+        // Colores para modo oscuro
+        "dark-surface": "#2D2D2D",
+        "dark-surface-2": "#3A3A3A",
+        "green-accent": "#9FE388",
       },
     },
   },
