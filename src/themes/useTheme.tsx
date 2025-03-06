@@ -38,7 +38,7 @@ export function useTheme() {
     // Valores
     theme,
     themeName,
-    isDefaultTheme: themeName === ThemeName.GREEN,
+    isDefaultTheme: themeName === ThemeName.LIGHT,
 
     // Acciones
     setTheme: (name: ThemeName) => themeManager.setTheme(name),

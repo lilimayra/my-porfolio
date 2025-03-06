@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { designProjects } from "@/data/projectsData";
+import useTheme from "@/themes/useTheme";
+import { ThemeName } from "@/themes/themeManager";
 
 const DesignProjects = () => {
+  const { themeName } = useTheme();
+
   // Configuración para la animación de los proyectos
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -62,7 +66,7 @@ const DesignProjects = () => {
                 <div className="flex flex-wrap gap-2 mb-4 justify-center">
                   {project.tags.map((tag, index) => (
                     <span
-                      key={index}
+                      key={`${tag}-${index}`}
                       className="px-2 py-1 text-xs rounded-full bg-green-transparent text-green-dark"
                     >
                       {tag}
@@ -75,7 +79,11 @@ const DesignProjects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block button hover:bg-yellow-500 transition"
+                  className={`font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 focus:outline-none ${
+                    themeName === ThemeName.DARK
+                      ? "text-green-dark border border-green-dark hover:bg-gray-100 focus:ring-4 focus:ring-green-800"
+                      : "text-green-dark border border-green-700 hover:bg-green-800 hover:text-white focus:ring-4 focus:ring-green-300"
+                  }`}
                 >
                   Ver Proyecto
                 </a>

@@ -25,7 +25,7 @@ const themes: Record<ThemeName, Theme> = {
  */
 class ThemeManager {
   private static instance: ThemeManager;
-  private currentTheme: ThemeName = ThemeName.GREEN;
+  private currentTheme: ThemeName = ThemeName.LIGHT;
   private listeners: Array<(theme: Theme) => void> = [];
 
   private constructor() {
@@ -82,7 +82,7 @@ class ThemeManager {
    * @returns El nombre del nuevo tema activo
    */
   public toggleTheme(): ThemeName {
-    const themeNames = [ThemeName.GREEN, ThemeName.LIGHT, ThemeName.DARK];
+    const themeNames = [/* ThemeName.GREEN, */ ThemeName.LIGHT, ThemeName.DARK];
     const currentIndex = themeNames.indexOf(this.currentTheme);
     const nextIndex = (currentIndex + 1) % themeNames.length;
     const nextTheme = themeNames[nextIndex];
@@ -127,7 +127,7 @@ class ThemeManager {
   private detectSystemColorScheme(): void {
     // Solo aplicar tema automáticamente si no hay preferencia guardada
     if (!localStorage.getItem("preferred-theme")) {
-      // Siempre usar el tema GREEN (planta) por defecto
+      // Siempre usar el tema LIGHT por defecto
       this.setTheme(ThemeName.LIGHT);
 
       // Nota: Se ha desactivado la detección automática de modo oscuro/claro
