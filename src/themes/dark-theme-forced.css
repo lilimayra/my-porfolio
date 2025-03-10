@@ -44,7 +44,7 @@ body.theme-dark div:not(.bg-gray-100):not(.bg-gray-800) {
   color: #e8e8e8 !important;
 }
 
-/* Etiquetas y fondos */
+/* Etiquetas y header-hero */
 body.theme-dark .bg-gray-100 {
   background-color: #3a3a3a !important;
   border: 1px solid #9fe388 !important;
