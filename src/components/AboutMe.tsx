@@ -38,7 +38,7 @@ const AboutMe = () => {
               className="underline decoration-gold hover:text-gray-800"
             >
               Igrowker
-            </a>
+            </a>{" "}
             , formé parte de un TrainingCamp IT, trabajando en equipo para
             desarrollar un proyecto complejo con metodologías usadas en la
             industria.
