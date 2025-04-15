@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { designProjects } from "@/data/projectsData";
-import useTheme from "@/themes/useTheme";
-import { ThemeName } from "@/themes/themeManager";
+
+// Importación de imágenes UX/UI
+import uxui1 from "@/assets/img/uxui1.png";
+import uxui2 from "@/assets/img/uxui2.png";
+import uxui3 from "@/assets/img/uxui3.png";
+import uxui4 from "@/assets/img/uxui4.png";
+import uxui5 from "@/assets/img/uxui5.png";
+import uxui6 from "@/assets/img/uxui6.png";
 
 const DesignProjects = () => {
-  const { themeName } = useTheme();
-
   // Configuración para la animación de los proyectos
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,6 +31,9 @@ const DesignProjects = () => {
     },
   };
 
+  // Array de imágenes UX/UI para mostrar
+  const uxuiImages = [uxui1, uxui2, uxui3, uxui4, uxui5, uxui6];
+
   return (
     <motion.div
       className="w-full max-w-6xl mx-auto mt-8"
@@ -36,59 +42,21 @@ const DesignProjects = () => {
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {designProjects.map((project) => (
+      <div className="flex flex-col gap-10">
+        {uxuiImages.map((image, index) => (
           <motion.div
-            key={project.id}
-            className="backdrop-blur-sm bg-transparent rounded-lg shadow-sm overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg flex flex-col"
+            key={`uxui-${index}`}
+            className="w-full overflow-hidden rounded-lg shadow-lg background-custom relative transition-all hover:shadow-xl"
             variants={itemVariants}
+            whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="relative h-80 md:h-96 overflow-hidden group rounded-t-lg p-4">
-              <div className="w-full h-full flex items-center justify-center">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="max-w-full max-h-full object-contain rounded-t-lg transition-all duration-500 ease-in-out transform scale-95 group-hover:scale-100"
-                  style={{
-                    transformOrigin: "center center",
-                  }}
-                />
-              </div>
-            </div>
-            <div className="p-5">
-              <h3 className="mb-3 text-xl font-semibold text-center">
-                {project.title}
-              </h3>
-              <p className="mb-5 text-sm flex-grow min-h-[100px]">
-                {project.description}
-              </p>
-              {project.tags && (
-                <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={`${tag}-${index}`}
-                      className="px-2 py-1 text-xs rounded-full bg-green-transparent text-green-dark"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <div className="flex justify-center mt-auto">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 focus:outline-none ${
-                    themeName === ThemeName.DARK
-                      ? "text-green-dark border border-green-dark hover:bg-gray-100 focus:ring-4 focus:ring-green-800"
-                      : "text-green-dark border border-green-700 hover:bg-green-800 hover:text-white focus:ring-4 focus:ring-green-300"
-                  }`}
-                >
-                  Ver Proyecto
-                </a>
-              </div>
-            </div>
+            <img
+              src={image}
+              alt={`Proyecto UX/UI ${index + 1}`}
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
           </motion.div>
         ))}
       </div>
