@@ -42,7 +42,7 @@ export const devProjects: Project[] = [
     image: veterinaria,
     description:
       "Herramienta para veterinarias desarrollada en Vue y Tailwind. Facilita la gestión de registros, citas y tratamientos de pacientes.",
-    url: "https://astonishing-tulumba-8c3592.netlify.app",
+    url: "https://patientsadmin.netlify.app",
     tags: ["Vue", "Tailwind"],
   },
   {
